@@ -1,0 +1,32 @@
+{
+    "article": {
+        "id": 68114,
+        "slug": "This-is-title-45658",
+        "title": "This is title",
+        "description": "This is description",
+        "body": "This is a body of article",
+        "createdAt": "2022-05-10T10:21:26.880Z",
+        "updatedAt": "2022-05-10T10:21:26.880Z",
+        "authorId": 45658,
+        "tagList": [],
+        "author": {
+            "username": "Dzimitry",
+            "bio": null,
+            "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+            "following": false
+        },
+        "favoritedBy": [
+            {
+                "id": 45658,
+                "email": "dima.mihnevich@mail.ru",
+                "username": "Dzimitry",
+                "password": "$2a$10$9pkegqxGX8PhOblsP/qhl.EuI5ueMzekDvPRHEpJwk./rLuDJWxUq",
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "bio": null,
+                "demo": false
+            }
+        ],
+        "favorited": true,
+        "favoritesCount": 1
+    }
+}

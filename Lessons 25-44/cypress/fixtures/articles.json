@@ -1,0 +1,41 @@
+{
+    "articles": [
+        {
+            "slug": "This-is-title-45658",
+            "title": "This is title",
+            "description": "This is description",
+            "body": "This is a body of article",
+            "tagList": [],
+            "createdAt": "2022-05-10T10:16:00.264Z",
+            "updatedAt": "2022-05-10T10:16:00.264Z",
+            "favorited": false,
+            "favoritesCount": 0,
+            "author": {
+                "username": "Dzimitry",
+                "bio": null,
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "following": false
+            }
+        },
+        {
+            "slug": "Create-a-new-implementation-1",
+            "title": "Create a new implementation",
+            "description": "join the community by creating a new implementation",
+            "body": "Share your knowledge and enpower the community by creating a new implementation",
+            "tagList": [
+                "implementations"
+            ],
+            "createdAt": "2021-11-24T12:11:08.212Z",
+            "updatedAt": "2021-11-24T12:11:08.212Z",
+            "favorited": false,
+            "favoritesCount": 9,
+            "author": {
+                "username": "Gerome",
+                "bio": null,
+                "image": "https://api.realworld.io/images/demo-avatar.png",
+                "following": false
+            }
+        }
+    ],
+    "articlesCount": 3
+}
