@@ -25,11 +25,16 @@ describe('Test with backend', () => {
 
 		cy.wait('@postArticles')
 		cy.get('@postArticles').then((xhr) => {
-			console.log(xhr);
 			expect(xhr.response.statusCode).to.eq(200)
 			expect(xhr.request.body.article.body).to.equal('This is a body of article')
 			expect(xhr.response.body.article.description).to.equal('This is description 2')
 		})
+
+		// my commands for deleting the article, because i was have a fail in next run test 
+		cy.get('.article-actions').contains('Delete Article1').click()
+		cy.wait(500)
+		cy.contains('Global Feed').click()
+		cy.get('app-article-list').should('not.contain', 'This is title')
 	})
 
 	it('Should gave tags with routing object', () => {
@@ -70,28 +75,28 @@ describe('Test with backend', () => {
 			}
 		}
 
-		cy.get('@token').then(token=>{
-			
-				cy.request({
-					url: 'https://api.realworld.io/api/articles',
-					headers: { 'Authorization': 'Token ' + token },
-					method: 'POST',
-					body: bodyRequest
-				}).then(response => {
-					expect(response.status).to.eql(200)
-				})
-				cy.contains('Global Feed').click()
-				cy.get('.article-preview').first().click()
-				cy.get('.article-actions').contains('Delete Article').click()
-				cy.wait(500)
+		cy.get('@token').then(token => {
 
-				cy.request({
-					url: "https://api.realworld.io/api/articles?limit=10&offset=0",
-					headers: { 'Authorization': 'Token ' + token },
-					method: 'GET'
-				}).its('body').then(body=>{
-					expect(body.articles[0].title).not.to.equal("Request from API")
-				})
+			cy.request({
+				url: 'https://api.realworld.io/api/articles',
+				headers: { 'Authorization': 'Token ' + token },
+				method: 'POST',
+				body: bodyRequest
+			}).then(response => {
+				expect(response.status).to.eql(200)
 			})
+			cy.contains('Global Feed').click()
+			cy.get('.article-preview').first().click()
+			cy.get('.article-actions').contains('Delete Article').click()
+			cy.wait(500)
+
+			cy.request({
+				url: "https://api.realworld.io/api/articles?limit=10&offset=0",
+				headers: { 'Authorization': 'Token ' + token },
+				method: 'GET'
+			}).its('body').then(body => {
+				expect(body.articles[0].title).not.to.equal("Request from API")
+			})
+		})
 	})
 })
