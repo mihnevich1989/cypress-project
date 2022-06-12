@@ -31,7 +31,7 @@ describe('Test with backend', () => {
 		})
 
 		// my commands for deleting the article, because i was have a fail in next run test 
-		cy.get('.article-actions').contains('Delete Article1').click()
+		cy.get('.article-actions').contains('Delete Article').click()
 		cy.wait(500)
 		cy.contains('Global Feed').click()
 		cy.get('app-article-list').should('not.contain', 'This is title')
@@ -78,7 +78,7 @@ describe('Test with backend', () => {
 		cy.get('@token').then(token => {
 
 			cy.request({
-				url: 'https://api.realworld.io/api/articles',
+				url: Cypress.env('apiURL') + 'api/articles',
 				headers: { 'Authorization': 'Token ' + token },
 				method: 'POST',
 				body: bodyRequest
@@ -91,7 +91,7 @@ describe('Test with backend', () => {
 			cy.wait(500)
 
 			cy.request({
-				url: "https://api.realworld.io/api/articles?limit=10&offset=0",
+				url: Cypress.env('apiURL') + "api/articles?limit=10&offset=0",
 				headers: { 'Authorization': 'Token ' + token },
 				method: 'GET'
 			}).its('body').then(body => {

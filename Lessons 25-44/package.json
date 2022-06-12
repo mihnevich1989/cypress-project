@@ -10,6 +10,7 @@
     "lint": "ng lint --force",
     "e2e": "ng e2e",
     "cypress:run": "npx cypress run",
+    "cypress:run_qa":"npx cypress run --env configFile=qa",
     "cypress:e2e": "start-test start http-get://localhost:4200 cypress:run"
   },
   "pre-commit": [
@@ -26,7 +27,7 @@
     "@angular/platform-browser-dynamic": "11.2.8",
     "@angular/router": "11.2.8",
     "core-js": "^2.4.1",
-    "cypress": "^9.6.1",
+    "cypress": "^10.1.0",
     "marked": "^0.3.9",
     "rxjs": "^6.4.0",
     "tslib": "^2.0.0",
