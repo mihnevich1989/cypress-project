@@ -40,6 +40,9 @@ yarn-error.log
 /e2e/*.map
 videos
 screenshots
+mochawesome-report
+mochawesome.json
+results
 
 # System Files
 .DS_Store

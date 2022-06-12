@@ -19,4 +19,8 @@ export default defineConfig({
     baseUrl: 'http://localhost:4200',
     excludeSpecPattern: '**/examples/*/*',
   },
+  reporter: 'cypress-multi-reporters',
+  reporterOptions: {
+    configFile: 'reporter-config.json'
+  }
 })
